@@ -1,0 +1,7 @@
+tablica = new Array(0,1,1,2);
+dlugosc = parseInt(prompt("Podaj długość ciągu: "));
+for(a=2,b=3,c=4; c < dlugosc;a++,b++,c++) {
+  tablica[c] = tablica[a] + tablica[b];
+}
+console.log(tablica)
+
