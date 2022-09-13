@@ -1,0 +1,18 @@
+imie = "Mateusz";
+nazwisko = Array('Z','A','D','A','R','A');
+odwrot = "";
+wynik = "";
+function ImieNazwisko (tekst = "") {
+  i = 0;
+  wynik = "";
+  while(tekst[i] != undefined) {
+    wynik += tekst[i];
+    i++;
+  }
+  return wynik;
+}
+wynik = ImieNazwisko(imie) +" "+ImieNazwisko(nazwisko)
+for(a=wynik.length -1;a >= 0;a--) {
+  odwrot += wynik[a];
+}
+console.log(odwrot);
