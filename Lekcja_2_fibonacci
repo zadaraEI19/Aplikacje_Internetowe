@@ -1,7 +1,8 @@
-tablica = new Array(0,1,1,2);
+tablica = new Array(0,1);
 dlugosc = parseInt(prompt("Podaj długość ciągu: "));
-for(a=2,b=3,c=4; c < dlugosc;a++,b++,c++) {
+for(a=0,b=1,c=2; c < dlugosc;a++,b++,c++) {
   tablica[c] = tablica[a] + tablica[b];
 }
 console.log(tablica)
+
 
