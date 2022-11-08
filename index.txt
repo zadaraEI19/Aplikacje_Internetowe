@@ -1,0 +1,60 @@
+/*
+SELECT id FROM `users`;
+INSERT INTO `users` (id,login,password,gender)  VALUE (2,"jakis_login","haslo",1);
+UPDATE `users` SET id= 12, login = "inny_login" WHERE id=2 ;
+DELETE FROM `users` WHERE id=1;
+*/
+const mysql = require('mysql2');
+const queries = ["SELECT * FROM users1","INSERT INTO users1 (id,login,password,gender)  VALUE (2,'nowy','haslo',1)","UPDATE users1 SET id= 12, login = 'inny_login' WHERE id=2","DELETE FROM users1 WHERE id=1"]
+
+async function main() {
+	var connection = mysql.createConnection({
+  	host     : 'localhost',
+  	user     : 'matiz',
+  	password : '1lx8jXEPqBYx!0cI',
+  	database : 'matiz'
+	});
+ 
+	connection.connect();
+
+	let responses = [];
+	wstaw(connection,responses);	
+	aktualizuj(connection,responses);
+	usuwanie(connection,responses);
+	pobierz(connection,responses);
+	
+	connection.end();
+}
+async function pobierz(a,b,id=0) {
+	if(id != 0) {
+    	let q1 = await a.promise().query("SELECT * FROM users1 WHERE id=" + id);
+		b.push(q1);
+	}
+	else{
+    	let q1 = await a.promise().query("SELECT * FROM users1");
+   		 b.push(q1);
+   		 console.log(q1[0]);
+    	}
+	}	
+async function wstaw(a,b){
+	let q2 = await a.promise().query("INSERT INTO users1 (id,login,password,gender)  VALUE (2,'nowy','haslo',1)");
+	b.push(q2);
+	console.log("Wstawiono!")
+}
+async function aktualizuj(a,b){
+	let q3 = await a.promise().query("UPDATE users1 SET id= 12, login = 'inny_login' WHERE id=2");
+	b.push(q3);
+	console.log("Zaktualizowano!")
+}
+async function usuwanie(a,b){
+	let q4 = await a.promise().query("DELETE FROM users1 WHERE id=1");
+	b.push(q4);
+	console.log("Usunięto!")
+}
+
+
+main();
+
+
+
+
