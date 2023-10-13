@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styl.css">
+    <title>Kalkulator</title>
+</head>
+
+<body>
+    <main>
+        <div id="proces"></div>
+        <div id="buttons">
+            <button type="button" onclick="">(</button>
+            <button type="button" onclick="">)</button>
+            <button type="button" onclick="">.</button>
+            <button type="button" class="dzialanie" onclick="">**</button>
+            <button type="button" onclick="">1</button>
+            <button type="button" onclick="">2</button>
+            <button type="button" onclick="">3</button>
+            <button type="button" class="dzialanie" onclick="">+</button>
+            <button type="button" onclick="">4</button>
+            <button type="button" onclick="">5</button>
+            <button type="button" onclick="">6</button>
+            <button type="button" class="dzialanie" onclick="">-</button>
+            <button type="button" onclick="">7</button>
+            <button type="button" onclick="">8</button>
+            <button type="button" onclick="">9</button>
+            <button type="button" class="dzialanie" onclick="">*</button>
+            <button type="reset" onclick="res()">AC</button>
+            <button type="button" onclick="">0</button>
+            <button type="submit" onclick="">Go</button>
+            <button type="button" class="dzialanie" onclick="">/</button>
+        </div>
+    </main>
+</body>
+<script>
+    const typing = document.querySelectorAll('button[type="button"]');
+    const main = document.querySelector('main');
+    let a = 0;
+    main.addEventListener('click', function () {
+        for (i = 0; i < typing.length; i++) {
+            const el = typing[i];
+            el.addEventListener("click", function () {
+                document.getElementById("proces").innerHTML += el.innerHTML;
+            })
+        }
+    })
+    function res() {
+        document.getElementById("proces").innerHTML = "";
+    }
+</script>
+
+</html>

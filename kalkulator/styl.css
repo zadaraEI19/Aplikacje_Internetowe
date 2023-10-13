@@ -1,0 +1,33 @@
+main {
+  width: 35%;
+  margin: auto;
+  margin-top: 5em;
+  border: 3px solid black;
+  border-radius: 6px;
+  background-color: black;
+}
+#proces {
+  text-align: right;
+  background-color: orange;
+  width: 90%;
+  margin: 0.5em 0.5em 1em 0.5em;
+  margin-right: auto;
+  margin-left: auto;
+  height: 1.2em;
+  font-size: 180%;
+  padding: 3px;
+}
+#buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+button {
+  flex-basis: 21%;
+  border-radius: 7px;
+  font-size: 180%;
+  margin-bottom: 0.4em;
+}
+.dzialanie {
+  background-color: darkgray;
+}
