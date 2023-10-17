@@ -31,25 +31,37 @@
             <button type="button" class="dzialanie" onclick="">*</button>
             <button type="reset" onclick="res()">AC</button>
             <button type="button" onclick="">0</button>
-            <button type="submit" onclick="">Go</button>
+            <button type="submit" onclick="liczenie()">Go</button>
             <button type="button" class="dzialanie" onclick="">/</button>
         </div>
+        <div id="a" hidden></div>
     </main>
 </body>
 <script>
     const typing = document.querySelectorAll('button[type="button"]');
     const main = document.querySelector('main');
-    let a = 0;
     main.addEventListener('click', function () {
         for (i = 0; i < typing.length; i++) {
             const el = typing[i];
             el.addEventListener("click", function () {
-                document.getElementById("proces").innerHTML += el.innerHTML;
+                document.getElementById("a").innerHTML = el.innerHTML;
             })
         }
+        document.getElementById("proces").innerHTML += document.getElementById("a").innerHTML;
     })
     function res() {
+        document.getElementById("a").innerHTML = "";
         document.getElementById("proces").innerHTML = "";
+    }
+    function liczenie() {
+        document.getElementById("a").innerHTML = "";
+        try {
+            document.getElementById("proces").innerHTML = Function('return ' + document.getElementById("proces").innerHTML)();
+        }
+        catch {
+            document.getElementById("proces").innerHTML = "ERROR!";
+        }
+
     }
 </script>
 
