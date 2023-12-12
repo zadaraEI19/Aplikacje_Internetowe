@@ -1,0 +1,7 @@
+1. select nazwa, ilosc, opis, cena, zdjecie from produkty where Rodzaje_id = 1 or Rodzaje_id = 2
+
+2. select produkty.nazwa, producenci.nazwa from produkty join producenci where produkty.Producenci_id = Producenci.id and ilosc < 10 and Rodzaje_id = 1
+
+3. CREATE USER 'anna'@'%' IDENTIFIED VIA mysql_native_password USING '***';GRANT USAGE ON *.* TO 'anna'@'%' REQUIRE NONE WITH MAX_QUERIES_PER_HOUR 0 MAX_CONNECTIONS_PER_HOUR 0 MAX_UPDATES_PER_HOUR 0 MAX_USER_CONNECTIONS 0;GRANT ALL PRIVILEGES ON `dane2`.* TO 'anna'@'%'; 
+
+4. insert into produkty (Rodzaje_id,producenci,nazwa,ilosc,opis,cena,zdjecie) values((select id from rodzaje where nazwa = 'owoce'),(SELECT id from `producenci` where nazwa = 'warzywa-rolnik'),'owoc1',10,'',9.99,'owoce.jpg')

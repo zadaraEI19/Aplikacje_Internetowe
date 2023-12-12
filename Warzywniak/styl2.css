@@ -1,0 +1,53 @@
+* {
+    font-family: Garamond;
+}
+body {
+    display: flex;
+    flex-wrap: wrap;
+}
+#pierwszy {
+    background-color: #00600F;
+    color:white;
+    text-align: center;
+    width:75%;
+    height:90px;
+}
+#drugi {
+    background-color: #00600F;
+    color:white;
+    text-align: center;
+    width:25%;
+    height:90px;
+}
+.main {
+    background-color: #C8E6C9;
+    overflow-x: scroll;
+    overflow-y: scroll;
+    height:600px;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}
+.footer {
+    background-color: #00600F;
+    color:white;
+    width:100%;
+}
+h5 {
+    background-color: #00600F;
+    color:white;
+    font-size: 200%;
+    text-align: center;
+    margin:0;
+}
+h2 {
+    text-align: right;
+}
+.main div {
+    margin:10px;
+    border: 1px solid #00600F;
+    width:300px;
+}
+ol {
+    text-align: left;
+}
